@@ -1,0 +1,28 @@
+extends layout
+
+block content
+  h1 City Images
+  h3 What a city actually looks like instantly
+  form
+    label(for="location")
+    input(id="address", name="address", placeholder="location")
+    input(type="submit" id="submitBtn" value="submit")
+      
+  p #{data.address}
+  for url in data.urls
+    img(src=url) 
+
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js")
+  script(src="/javascripts/common.js")
+
+  script.
+
+    $("#submitBtn").click(function() {
+      var place = $('#address');
+      var urlCount = 10;
+
+      $.ajax({
+        url: '/search?address=' + #{address} + '&urlCount=' + urlCount,
+        type: 'GET'
+      });
+    });
