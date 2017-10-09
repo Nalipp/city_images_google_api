@@ -6,7 +6,7 @@ block content
   form
     label(for="location")
     input(id="address", name="address", placeholder="location")
-    input(type="submit" id="submitBtn" value="submit")
+    input(type="button" id="submitBtn" value="submit")
       
   p #{data.address}
   for url in data.urls
@@ -16,9 +16,9 @@ block content
   script(src="/javascripts/common.js")
 
   script.
-
     $("#submitBtn").click(function() {
       var place = $('#address');
+    console.log('pplaceplaceplaceplacelace', place);
       var urlCount = 10;
 
       $.ajax({

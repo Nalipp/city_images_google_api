@@ -21,9 +21,6 @@ router.get('/search', function(req, res, next) {
 
     geoData.getRandomizedUrls(data, urlCount, resultUrls => {
       data['urls'] = resultUrls;
-
-      console.log('11111111111111', data); 
-
       res.render('index', {data: data}); 
     });
   });
