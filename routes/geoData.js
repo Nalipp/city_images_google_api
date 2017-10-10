@@ -22,9 +22,6 @@ module.exports = {
     let baseLat = lat.slice(0, lat.indexOf('.') + 3);
     let baseLng = lng.slice(0, lng.indexOf('.') + 3);
 
-    console.log(baseLat);
-    console.log(baseLng);
-
     for (let i = 0; i < urlCount; i++) {
       let lat = baseLat + Math.floor(Math.random() * (999 - 100) + 100);
       let lng = baseLng + Math.floor(Math.random() * (999 - 100) + 100);
