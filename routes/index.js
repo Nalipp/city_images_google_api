@@ -2,6 +2,10 @@ const express = require('express');
 const router = express.Router();
 const geoData = require('./geoData');
 
+router.get('/', function(req, res, next) {
+  res.redirect('/search');
+});
+
 router.get('/search', function(req, res, next) {
 
   let address = req.query.address;
